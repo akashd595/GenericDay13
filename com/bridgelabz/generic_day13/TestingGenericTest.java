@@ -38,4 +38,19 @@ class TestingGenericTest {
         float max = TestGeneric.maxFloatNumber(5.2f,8.2f,9.9f);
         assertEquals(9.9f,max);
     }
+    @Test
+    void firstStringMax(){
+        String max = TestGeneric.maxString("yahoo", "hitman", "virat");
+        assertEquals("yahoo",max);
+    }
+    @Test
+    void secondStringMax(){
+        String max = TestGeneric.maxString("hitman", "yahoo", "virat");
+        assertEquals("yahoo",max);
+    }
+    @Test
+    void thirdStringMax(){
+        String max = TestGeneric.maxString("virat", "hitman", "yahoo");
+        assertEquals("yahoo",max);
+    }
 }
