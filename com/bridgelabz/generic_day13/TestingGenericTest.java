@@ -5,54 +5,62 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestingGenericTest {
-//    static TestingGenericTest tg = new TestingGenericTest();
-TestGeneric<Integer> intTG = new TestGeneric();
-    TestGeneric<Float> floatTG = new TestGeneric();
-    TestGeneric<String> stringTG = new TestGeneric();
 
     @Test
     void firstMax(){
-        Integer max = intTG.maxValue(5,3,2);
+        TestGeneric<Integer> intTG = new TestGeneric(5,3,2);
+        Integer max = intTG.maxValue();
         assertEquals(5,max);
     }
     @Test
     void secondMax(){
-        int max = intTG.maxValue(5,9,2);
+    TestGeneric<Integer> intTG = new TestGeneric(5,9,2);
+        int max = intTG.maxValue();
         assertEquals(9,max);
     }
     @Test
     void thirdMax(){
-        int max = intTG.maxValue(5,3,8);
+        TestGeneric<Integer> intTG = new TestGeneric(5,3,8);
+
+        int max = intTG.maxValue();
         assertEquals(8,max);
     }
     @Test
     void firstFloatMax(){
-        float max = floatTG.maxValue(5.2f,3.2f,1.9f);
+          TestGeneric<Float> floatTG = new TestGeneric(5.2f,3.2f,1.9f);
+        float max = floatTG.maxValue();
         assertEquals(5.2f,max);
     }
     @Test
     void secondFloatMax(){
-        float max = floatTG.maxValue(5.2f,8.2f,1.9f);
+          TestGeneric<Float> floatTG = new TestGeneric(5.2f,8.2f,1.9f);
+        float max = floatTG.maxValue();
         assertEquals(8.2f,max);
     }
     @Test
     void thirdFloatMax(){
-        float max = floatTG.maxValue(5.2f,8.2f,9.9f);
+          TestGeneric<Float> floatTG = new TestGeneric(5.2f,8.2f,9.9f);
+        float max = floatTG.maxValue();
         assertEquals(9.9f,max);
     }
     @Test
     void firstStringMax(){
-        String max = stringTG.maxValue("yahoo", "hitman", "virat");
+    TestGeneric<String> stringTG = new TestGeneric("yahoo", "hitman", "virat");
+
+        String max = stringTG.maxValue();
         assertEquals("yahoo",max);
     }
     @Test
     void secondStringMax(){
-        String max = stringTG.maxValue("hitman", "yahoo", "virat");
+    TestGeneric<String> stringTG = new TestGeneric("hitman", "yahoo", "virat");
+
+        String max = stringTG.maxValue();
         assertEquals("yahoo",max);
     }
     @Test
     void thirdStringMax(){
-        String max = stringTG.maxValue("virat", "hitman", "yahoo");
+    TestGeneric<String> stringTG = new TestGeneric("virat", "hitman", "yahoo");
+        String max = stringTG.maxValue();
         assertEquals("yahoo",max);
     }
 }
